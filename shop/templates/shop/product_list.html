@@ -1,0 +1,10 @@
+{%for item in products%}
+{%if item.image%}
+<img src = "{{item.image.url}}" width="150"><dir>
+{% else %}
+Картинки нет<dir>
+{% endif %}
+{{item.name}}
+{{item.get_discount}}
+</dir>
+{% endfor %}
