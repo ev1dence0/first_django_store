@@ -16,6 +16,7 @@ class Product(models.Model):
     stock = models.IntegerField()
     def get_discount(self):
         return self.price * (1 - self.category.discount / 100)
+    descripion = models.TextField(max_length=500, null=True)
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     
     

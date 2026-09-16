@@ -1,10 +1,23 @@
+{%for details in product_more%}
+
+
+<a href = "/">All products</a>
+    <br>
+{%endfor%}
+{%for type in categories%}
+<a href = "/?category={{type.id}}"> {{type.name}}</a>
+    <br>
+{%endfor%}
 {%for item in products%}
+<div style="border: 1px solid rgb(15, 13, 13); padding: 20px; margin-bottom: 15px; border-radius: 8px; background-color: hsl(206, 54%, 92%); max-width: 200px">
 {%if item.image%}
-<img src = "{{item.image.url}}" width="150"><dir>
+<img src = "{{item.image.url}}" width="150">
 {% else %}
-Картинки нет<dir>
+Картинки нет<br>
 {% endif %}
-{{item.name}}
-{{item.get_discount}}
-</dir>
+<h3>
+<a href ="{% url 'product_more' item.id %}"> {{item.name}}</a>
+</h3>
+<p><strong>Price: {{item.get_discount}}</strong></p>
+</div>
 {% endfor %}

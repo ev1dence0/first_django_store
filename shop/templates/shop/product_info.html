@@ -1,0 +1,11 @@
+<div style="border: 1px solid rgb(15, 13, 13); padding: 20px; margin-bottom: 15px; border-radius: 8px; background-color: #e2ffea; max-width: 300px">
+{{details.name}}
+{{details.get_discount}}
+{{details.stock}}
+{{details.description}}
+{%if details.image%}
+<img src = "{{details.image.url}}" width = "300">
+{%else%}
+Картинки нет
+{%endif%}
+</div>
