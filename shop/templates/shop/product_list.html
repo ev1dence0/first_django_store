@@ -1,20 +1,28 @@
+
+<form method = "GET" action = "">
+    <input type = "text" name = "q" placeholder = "Search for products">
+    <button type = "submit">Search</button>
+<br>
+
 {%for details in product_more%}
-
-
 <a href = "/">All products</a>
     <br>
 {%endfor%}
+
 {%for type in categories%}
 <a href = "/?category={{type.id}}"> {{type.name}}</a>
     <br>
 {%endfor%}
+
+
 {%for item in products%}
 <div style="border: 1px solid rgb(15, 13, 13); padding: 20px; margin-bottom: 15px; border-radius: 8px; background-color: hsl(206, 54%, 92%); max-width: 200px">
 {%if item.image%}
 <img src = "{{item.image.url}}" width="150">
 {% else %}
-Картинки нет<br>
+No image<br>
 {% endif %}
+
 <h3>
 <a href ="{% url 'product_more' item.id %}"> {{item.name}}</a>
 </h3>

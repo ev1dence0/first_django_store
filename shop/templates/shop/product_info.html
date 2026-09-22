@@ -1,11 +1,13 @@
-<div style="border: 1px solid rgb(15, 13, 13); padding: 20px; margin-bottom: 15px; border-radius: 8px; background-color: #e2ffea; max-width: 300px">
-{{details.name}}
-{{details.get_discount}}
-{{details.stock}}
-{{details.description}}
+<a href = "{%url 'product_list'%}"> Main </a>
+<div style="border: 1px solid hsl(157, 91%, 78%); padding: 20px; margin-bottom: 15px; border-radius: 8px; background-color: #e2ffea; max-width: 300px">
 {%if details.image%}
 <img src = "{{details.image.url}}" width = "300">
 {%else%}
-Картинки нет
+No image
 {%endif%}
+<br>
+Name: {{details.name}}<br>
+Price: {{details.get_discount}}<br>
+Stock: {{details.stock}}<br>
+Description: {{details.description}}<br>
 </div>

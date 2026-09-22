@@ -6,8 +6,12 @@ def product_list(request):
     categories = Category.objects.all()
 
     category_id = request.GET.get('category')
-   
-    if category_id:
+
+    
+    search = request.GET.get('q')
+    if search:
+        products = Product.objects.filter(name__icontains=search)
+    elif category_id:
         products = Product.objects.filter(category_id=category_id)
     else:
         products = Product.objects.all()
